@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Header, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ICallback } from '../model/callback.interface';
 
 import { CallbackService } from '../services/callback.service';
@@ -8,18 +8,36 @@ import { CallbackService } from '../services/callback.service';
 export class CallbackController {
 
     constructor(
-        private callbackService: CallbackService
+        private readonly callbackService: CallbackService
     ) { }
 
+    // get all callbacks
     @Get()
     get() {
-        return 'hello'
+        return this.callbackService.getAll()
     }
 
+    // get todo by id
+    @Get(':id')
+    getById(@Param('id') id: string) {
+        return this.callbackService.getById(Number(id))
+    }
+
+    // create 
     @Post()
-    @HttpCode(HttpStatus.OK)
-    @Header('Cache-Control', 'none')
-    createOrder(@Body() callback: ICallback) {
+    async create(@Body() callback: ICallback) {
         return this.callbackService.create(callback)
+    }
+
+    // update 
+    @Put(':id')
+    async update(@Param('id') id: string, @Body() callback: ICallback) {
+        return this.callbackService.update(Number(id), callback)
+    }
+
+    //delete todo
+    @Delete(':id')
+    async delete(@Param('id') id: string) {
+        this.callbackService.delete(Number(id));
     }
 }

@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./bin/${NODEJS17}/Dockerfile.dev
     container_name: "${PROJECT_NAME}-${NODEJS17}"
-    restart: "always"
+    restart: "on-failure"
     ports:
       - ${API_PORT}:${API_PORT}
     depends_on:
