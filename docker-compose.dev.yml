@@ -1,6 +1,26 @@
 version: "3"
 
 services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./bin/nginx/Dockerfile.dev
+    container_name: "${PROJECT_NAME}-NGINX"
+    depends_on:
+      - api
+    restart: "always"
+    ports:
+      - "80:80"
+
+  client:
+    build:
+      context: .
+      dockerfile: ./bin/react18/Dockerfile
+    container_name: "${PROJECT_NAME}-REACT"
+    restart: "on-failure"
+    volumes:
+      - ./frontend/src:/app/src
+
   api:
     build:
       context: .

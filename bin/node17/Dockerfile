@@ -1,11 +1,11 @@
-FROM node:12-alpine AS builder
+FROM node:17-alpine AS builder
 WORKDIR /app
 COPY ./backend/package*.json ./
 RUN npm install
 COPY ./backend/ ./
 RUN npm run build
 
-FROM node:12-alpine AS server
+FROM node:17-alpine AS server
 WORKDIR /app
 COPY ./backend/package*.json ./
 RUN npm install --production
