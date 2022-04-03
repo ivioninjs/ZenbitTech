@@ -56,3 +56,4 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=${ADMIN_PASSWORD}
     ports:
       - "5050:80"
+volumes:
