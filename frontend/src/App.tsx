@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "./axios";
+import Button from "./components/Button";
+import Flex from "./components/Flex";
+import Form from "./components/Form";
 
 function App() {
   const [callbacks, setCallbacks] = React.useState([]);
@@ -15,16 +18,20 @@ function App() {
   };
   return (
     <AppWrapper>
-      <h1>Hello world!!</h1>
-      <button onClick={() => clickHandler()}>get all</button>
-      <div>
-        <ul>
-          {callbacks.length > 0 &&
-            callbacks.map((callback: any, index: any): any => {
-              return <li key={index + callback.name}>{callback.name}</li>;
-            })}
-        </ul>
-      </div>
+      <Flex justify="center" direction="column">
+        <Button type="button" onClick={() => clickHandler()}>
+          getAll()
+        </Button>
+        <div>
+          <ul>
+            {callbacks.length > 0 &&
+              callbacks.map((callback: any, index: any): any => {
+                return <li key={index + callback.name}>{callback.name}</li>;
+              })}
+          </ul>
+        </div>
+        <Form />
+      </Flex>
     </AppWrapper>
   );
 }
@@ -32,7 +39,6 @@ function App() {
 export default App;
 
 const AppWrapper = styled.div`
-  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 1rem;
