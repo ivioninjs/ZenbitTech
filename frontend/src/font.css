@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Apercu Arabic Pro';
+    src: url('./font/ApercuArabicPro-Regular.eot');
+    src: local('Apercu Arabic Pro Regular'), local('ApercuArabicPro-Regular'),
+        url('./font/ApercuArabicPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./font/ApercuArabicPro-Regular.woff2') format('woff2'),
+        url('./font/ApercuArabicPro-Regular.woff') format('woff'),
+        url('./font/ApercuArabicPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apercu Arabic Pro';
+    src: url('./font/ApercuArabicPro-Medium.eot');
+    src: local('Apercu Arabic Pro Medium'), local('ApercuArabicPro-Medium'),
+        url('./font/ApercuArabicPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./font/ApercuArabicPro-Medium.woff2') format('woff2'),
+        url('./font/ApercuArabicPro-Medium.woff') format('woff'),
+        url('./font/ApercuArabicPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apercu Arabic Pro';
+    src: url('./font/ApercuArabicPro-Light.eot');
+    src: local('Apercu Arabic Pro Light'), local('ApercuArabicPro-Light'),
+        url('./font/ApercuArabicPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('./font/ApercuArabicPro-Light.woff2') format('woff2'),
+        url('./font/ApercuArabicPro-Light.woff') format('woff'),
+        url('./font/ApercuArabicPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apercu Arabic Pro';
+    src: url('./font/ApercuArabicPro-Bold.eot');
+    src: local('Apercu Arabic Pro Bold'), local('ApercuArabicPro-Bold'),
+        url('./font/ApercuArabicPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./font/ApercuArabicPro-Bold.woff2') format('woff2'),
+        url('./font/ApercuArabicPro-Bold.woff') format('woff'),
+        url('./font/ApercuArabicPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
