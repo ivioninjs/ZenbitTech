@@ -1,6 +1,27 @@
 # ZenbitTech
 
-# Deployment
+Demo: [website](http://159.223.13.78/)
 
-1. Connect to server `ssh -i ~/.ssh/do_server jason@159.223.13.78`
-2. user: jason | password: jason
+Stack: Node.js | Nest.js | React.JS | Postgres | Docker
+Design: [Figma](https://www.figma.com/file/OmpRyHggnkIZ7Qr1c5o5gg/Untitled?node-id=1%3A2)
+
+Description:
+Сделать форму обратной связи
+
+Технические моменты frontend:
+Сделать открытую страницу, с мобильной адаптацией по собственному видению
+
+- React
+- Styled-component
+- Redux - будет отлично, если будете спользовать
+
+Технические моменты backend:
+
+- Сделать открытое АПИ которое будет принимать заявку и сохранять в базе
+- NodeJs (Nest предпочтительный фреймворк)
+- Mysql/Postgress
+
+Приложение залить на любой сервер,
+Скинуть ссылку на загруженное приложение и на гитхаб
+
+Покажите что вы умеете, ваш подход к пониманию задачи, подумайте какие могут быть узкие места, посмотрите на результат как пользователь, а не как программист.

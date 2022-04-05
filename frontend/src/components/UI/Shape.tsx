@@ -1,16 +1,42 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface IShapeProps {
   //!TODO нужны более осмысленные названия
   variant?: "one" | "two" | "three" | "sun" | "cloud";
-  heigh?: string;
+  height?: string;
   width?: string;
   opacity?: number;
+  sm?: IShapeProps;
+  md?: IShapeProps;
 }
 
 const StyledShape = styled.div<IShapeProps>`
   opacity: ${({ opacity }) => opacity || 1};
+
+  svg {
+    width: ${({ width }) => width || "auto"};
+    height: ${({ height }) => height || "auto"};
+
+    @media ${props => props.theme.media.phone} {
+      ${({ sm }) =>
+        sm &&
+        css`
+          width: ${sm.width};
+          height: ${sm.height};
+          opacity: ${sm.opacity};
+        `}
+    }
+
+    @media ${props => props.theme.media.tablet} {
+      ${({ md }) =>
+        md &&
+        css`
+          width: ${md.width};
+          height: ${md.height};
+        `}
+    }
+  }
 `;
 const Shape: React.FC<IShapeProps> = props => {
   switch (props.variant) {
@@ -18,8 +44,8 @@ const Shape: React.FC<IShapeProps> = props => {
       return (
         <StyledShape {...props}>
           <svg
-            width="212"
-            height="212"
+            width={props.width || "212"}
+            height={props.height || "212"}
             viewBox="0 0 212 212"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -105,8 +131,8 @@ const Shape: React.FC<IShapeProps> = props => {
       return (
         <StyledShape {...props}>
           <svg
-            width={props.width}
-            height={props.heigh}
+            width="87"
+            height="87"
             viewBox="0 0 87 87"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -119,8 +145,8 @@ const Shape: React.FC<IShapeProps> = props => {
       return (
         <StyledShape {...props}>
           <svg
-            width={props.width || "219"}
-            height={props.heigh || "165"}
+            width="219"
+            height="165"
             viewBox={"0 0 219 165"}
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

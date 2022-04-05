@@ -8,6 +8,7 @@ import {
   FacebookIcon,
   PinterestIcon,
 } from "../Icons";
+import Link from "../Link";
 import Container from "./Container";
 import Layer from "./Layer";
 import Shape from "./Shape";
@@ -20,15 +21,6 @@ const StyledFooter = styled.footer`
   overflow: hidden;
   padding-top: 80px;
   padding-bottom: 106px;
-`;
-const PinkGoodie = styled.div`
-  position: absolute;
-  bottom: -10%;
-`;
-const GreenGoodie = styled.div`
-  position: absolute;
-  top: 0;
-  right: 10%;
 `;
 
 const SocialWrapper = styled.div`
@@ -43,22 +35,30 @@ const Footer: React.FC = () => {
     <StyledFooter>
       <Container>
         <SocialWrapper>
-          <Flex justify="space-between">
-            <LinkenInIcon />
-            <TwitterIcon />
-            <FacebookIcon />
-            <PinterestIcon />
+          <Flex justify="space-between" align="center">
+            <Link path="https://www.linkedin.com">
+              <LinkenInIcon />
+            </Link>
+            <Link path="https://twitter.com/">
+              <TwitterIcon />
+            </Link>
+            <Link path="https://www.facebook.com/">
+              <FacebookIcon />
+            </Link>
+            <Link path="https://www.pinterest.jp/">
+              <PinterestIcon />
+            </Link>
           </Flex>
         </SocialWrapper>
       </Container>
       <Layer zIndex={0} top="0" right="14%">
-        <Shape />
+        <Shape sm={{ width: "58px" }} />
       </Layer>
-      <Layer zIndex={0} top="0" left="9%">
-        <Shape variant="one" />
+      <Layer zIndex={0} top="0" left="9%" sm={{ top: "15%" }}>
+        <Shape variant="one" sm={{ width: "100px" }} />
       </Layer>
       <Layer zIndex={0} top="33%" right="6%">
-        <Shape variant="three" />
+        <Shape variant="three" sm={{ width: "44px" }} />
       </Layer>
     </StyledFooter>
   );

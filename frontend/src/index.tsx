@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./font.css";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import App from "./App";
 
 const GlobalStyle = createGlobalStyle`
@@ -40,12 +40,19 @@ textarea
 }
 `;
 
+const theme = {
+  media: {
+    phone: "(max-width: 996px)",
+    tablet: "(max-width: 1440px) and (min-width: 996px)",
+  },
+};
+
 ReactDOM.render(
   <React.StrictMode>
-    <React.Fragment>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <App />
-    </React.Fragment>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
