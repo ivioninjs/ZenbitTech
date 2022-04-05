@@ -5,6 +5,38 @@ Demo: [website](http://159.223.13.78/)
 Stack: Node.js | Nest.js | React.JS | Postgres | Docker
 Design: [Figma](https://www.figma.com/file/OmpRyHggnkIZ7Qr1c5o5gg/Untitled?node-id=1%3A2)
 
+Check API:
+
+- All callbacks
+  `GET: http://159.223.13.78/api/callback`
+- Get callback by ID
+  `GET: http://159.223.13.78/api/callback/:id`
+
+- Create callback
+  `POST: http://159.223.13.78/api/callback`
+  fields:
+
+```json
+{
+  "name": "",
+  "email": "",
+  "message": ""
+}
+```
+
+- Edit callback
+  `PUT: http://159.223.13.78/api/callback/:id`
+- Remove callback
+  `DELETE: http://159.223.13.78/api/callback/:id`
+
+Also you can use PgAdmin:
+ip: http://159.223.13.78:5050
+login: admin@gmail.com
+password: root
+host_name: database
+username: admin
+password: root
+
 Description:
 Сделать форму обратной связи
 
