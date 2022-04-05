@@ -19,7 +19,7 @@ export default function useTextArea(args: params) {
   };
   const element = (
     <TextArea
-      rows={5}
+      rows={4}
       value={value}
       placeholder={args.placeholder}
       required={args.required}

@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
-import Flex from "./Flex";
-import Portal from "./Portal";
+import Flex from "../Flex";
+import Portal from "../Portal";
 
 interface IAlertProps {
   onClose: () => void;
@@ -16,7 +16,7 @@ const Popup = styled.div`
   left: 0;
   background: rgba(0, 0, 0, 0.8);
 
-  z-index: 1;
+  z-index: 999;
 `;
 const PopupContent = styled.div`
   max-width: 250px;

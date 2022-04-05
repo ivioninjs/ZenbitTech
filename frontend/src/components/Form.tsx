@@ -4,13 +4,19 @@ import axios from "../axios";
 
 import useInput from "../hooks/useInput";
 import useTextArea from "../hooks/useTextArea";
-import Alert from "./Alert";
+import Alert from "./UI/Alert";
 import Button from "./Button";
 import Title from "./Title";
+import Box from "./Box";
 
 interface IFormProps {}
 
-const StyledForm = styled.form<IFormProps>``;
+const StyledForm = styled.form<IFormProps>`
+  display: block;
+  max-width: 557px;
+  position: relative;
+  z-index: 1;
+`;
 
 const Form: React.FC<IFormProps> = props => {
   const [isOpen, setOpen] = React.useState(false);
@@ -42,11 +48,15 @@ const Form: React.FC<IFormProps> = props => {
   return (
     <React.Fragment>
       <StyledForm onSubmit={submitHandler}>
-        <Title>Reach out to us!</Title>
-        {inputName}
-        {inputEmail}
-        {textMessage}
-        <Button type="submit">send message</Button>
+        <Box margin="30px 0">
+          <Title>Reach out to us!</Title>
+        </Box>
+        <Box margin="0 0 8px 0">{inputName}</Box>
+        <Box margin="0 0 8px 0">{inputEmail}</Box>
+        <Box>{textMessage}</Box>
+        <Box margin="23px 0">
+          <Button type="submit">send message</Button>
+        </Box>
       </StyledForm>
       {isOpen && (
         <Alert isOpened={isOpen} onClose={() => setOpen(prev => !prev)}>
